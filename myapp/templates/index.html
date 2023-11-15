@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block title %}
+<title>HomePage</title>
+{% endblock title %} {% block content %}
+<h1 class="text-center">Show data</h1>
+{% if messages %} {% for message in messages %}
+
+<div class="alert alert-success" role="alert">
+  <strong>{{message}}</strong>
+</div>
+{%endfor %}{% endif %}
+<div class="table-responsive">
+  <table class="table table-dark table-striped">
+    <thead class="table-light">
+      <caption>
+        Person
+      </caption>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Date</th>
+        <th>Edmit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for person in all_person %}
+      <tr class="table-primary">
+        <td scope="row">{{person.id}}</td>
+        <td>{{person.name}}</td>
+        <td>{{person.age}}</td>
+        <td>{{person.date}}</td>
+        <td><a href="edit/{{person.id}}" class="btn btn-warning">Edmit</a></td>
+        <td>
+          <a
+            onclick="return confirm('Delete Confirem Data {{person.name}} is now?')"
+            href="delete/{{person.id}}"
+            class="btn btn-danger"
+            >Delete</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    <tfoot></tfoot>
+  </table>
+</div>
+
+{% endblock content %}

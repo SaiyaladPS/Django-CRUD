@@ -1,0 +1,22 @@
+# Virtual environment
+venv/
+
+# git
+.gitignore
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE/Editor specific files
+.vscode/
+.idea/
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Environment variables
+.env
